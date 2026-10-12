@@ -1,0 +1,17 @@
+name: Export nexent image
+on:
+  workflow_dispatch:
+
+jobs:
+  save-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull nexent/nexent:v2.7.0
+        run: |
+          docker pull nexent/nexent:v2.7.0
+          docker save -o nexent-v2.7.0.tar nexent/nexent:v2.7.0
+      - name: Upload tar artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexent-v2.7.0-image
+          path: nexent-v2.7.0.tar
