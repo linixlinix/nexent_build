@@ -1,7 +1,6 @@
 name: Export all nexent images separate tar
 on:
   workflow_dispatch:
-
 jobs:
   save-image:
     runs-on: ubuntu-latest
