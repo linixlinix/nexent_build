@@ -7,12 +7,12 @@ jobs:
     steps:
       - name: Pull all 4 nexent images
         run: |
-          docker pull nexent/nexent-web:v2.7.0
+          docker pull nexent/nexent-ubuntu-terminal:v2.7.0
           # 每个镜像单独导出独立tar文件
-          docker save -o nexent-web-v2.7.0.tar nexent/nexent-web:v2.7.0
+          docker save -o nexent-ubuntu-terminal-v2.7.0.tar nexent/nexent-ubuntu-terminal:v2.7.0
       - name: Upload all tar artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: nexent-web-all-tars
+          name: nexent-ubuntu-terminal-all-tars
           path: |
-            nexent-web-v2.7.0.tar
+            nexent-ubuntu-terminal-v2.7.0.tar
